@@ -1,0 +1,7 @@
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\bin\Release\DAL.dll
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\bin\Release\DAL.pdb
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\bin\Release\Acidaes.Logging.dll
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\bin\Release\Newtonsoft.Json.dll
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\bin\Release\Newtonsoft.Json.xml
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\obj\Release\DAL.dll
+D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\obj\Release\DAL.pdb

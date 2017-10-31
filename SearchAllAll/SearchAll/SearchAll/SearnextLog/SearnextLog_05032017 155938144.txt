@@ -1,0 +1,96 @@
+03-05-2017 15:59:38:145 Entered In AddIssueInDb:-ThreadId-17
+03-05-2017 16:01:43:620 AddIssueInDb Exception :Object reference not set to an instance of an object.-ThreadId-17
+03-05-2017 16:01:43:622 AddIssueInDb Exception Stacktrace :   at DAL.DALCommon.GetConnectionString() in D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 17
+   at DAL.DALCommon.AddIssueInDb(String Projectname, String TypeOfIssue, String Loggedby, String Instance, String IssueSubject, String Issuedescription, String issueresolution) in D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 26-ThreadId-17
+03-05-2017 16:02:45:793 Entered In AddIssueInDb:-ThreadId-26
+03-05-2017 16:13:13:550 Entered In AddIssueInDb:-ThreadId-52
+04-05-2017 11:57:46:594 Entered In AddIssueInDb:-ThreadId-34
+04-05-2017 11:59:56:977 Entered In AddIssueInDb:-ThreadId-51
+05-05-2017 11:47:04:910 Entered In AddIssueInDb:-ThreadId-7
+05-05-2017 11:49:28:560 Entered In AddIssueInDb:-ThreadId-9
+09-05-2017 18:01:01:006 Entered In AddIssueInDb:-ThreadId-9
+09-05-2017 18:01:01:192 Insert QueryINSERT INTO Crmnext_IssueResolution_Master(ProjectName,InstanceName,[Type],LoggedDate,[Subject],LoggedBy,IssueDescription,IssueResolution)
+                                     VALUES ( 'HDFC','QA','Integration Job',getdate(),'The proxy name could not be resolved: osbsoa.hdfcbank.com','Rajesh','The proxy name could not be resolved: osbsoa.hdfcbank.com','<p>fgdfgdfg</p>')-ThreadId-9
+09-05-2017 18:02:58:907 Entered In AddIssueInDb:-ThreadId-6
+09-05-2017 18:02:58:909 Insert QueryINSERT INTO Crmnext_IssueResolution_Master(ProjectName,InstanceName,[Type],LoggedDate,[Subject],LoggedBy,IssueDescription,IssueResolution)
+                                     VALUES ( 'hdfc','QA','Integration Job',getdate(),'The proxy name could not be resolved: 'osbsoa.hdfcbank.com'','sdfsd','The proxy name could not be resolved: 'osbsoa.hdfcbank.com'','<p>fhfgh</p>')-ThreadId-6
+09-05-2017 18:02:59:025 AddIssueInDb Exception :Incorrect syntax near 'osbsoa'.-ThreadId-6
+09-05-2017 18:02:59:117 AddIssueInDb Exception Stacktrace :   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DAL.DALCommon.AddIssueInDb(String Projectname, String TypeOfIssue, String Loggedby, String Instance, String IssueSubject, String Issuedescription, String issueresolution) in D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 32-ThreadId-6
+09-05-2017 18:21:31:614 Entered In AddIssueInDb:-ThreadId-22
+09-05-2017 18:21:31:754 Insert QueryINSERT INTO Crmnext_IssueResolution_Master(ProjectName,InstanceName,[Type],LoggedDate,[Subject],LoggedBy,IssueDescription,IssueResolution)
+                                     VALUES ( 'hdfc','QA','Integration Job',getdate(),'The proxy name could not be resolved: osbsoa.hdfcbank.com','sdfsd','The proxy name could not be resolved: osbsoa.hdfcbank.com','<p>fhfgh'jlk'</p>')-ThreadId-22
+09-05-2017 18:21:31:831 AddIssueInDb Exception :Incorrect syntax near 'jlk'.-ThreadId-22
+09-05-2017 18:21:31:846 AddIssueInDb Exception Stacktrace :   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at DAL.DALCommon.AddIssueInDb(String Projectname, String TypeOfIssue, String Loggedby, String Instance, String IssueSubject, String Issuedescription, String issueresolution) in D:\SearchEngine\NewLatest\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 32-ThreadId-22
+09-05-2017 18:26:23:297 Entered In AddIssueInDb:-ThreadId-21
+09-05-2017 18:26:23:401 Insert QueryINSERT INTO Crmnext_IssueResolution_Master(ProjectName,InstanceName,[Type],LoggedDate,[Subject],LoggedBy,IssueDescription,IssueResolution)
+                                     VALUES ( 'fgdfg','QA','Integration Job',getdate(),'The proxy name could not be resolved: osbsoa.hdfcbank.com','sdfsd','The proxy name could not be resolved: osbsoa.hdfcbank.com','<p>ghfgjkh</p>')-ThreadId-21
+09-05-2017 18:27:18:483 Entered In AddIssueInDb:-ThreadId-8
+09-05-2017 18:27:18:486 Insert QueryINSERT INTO Crmnext_IssueResolution_Master(ProjectName,InstanceName,[Type],LoggedDate,[Subject],LoggedBy,IssueDescription,IssueResolution)
+                                     VALUES ( 'aaaaaa','QA','Integration Job',getdate(),'The proxy name could not be resolved: "osbsoa.hdfcbank.com"','dfgd','The proxy name could not be resolved: "osbsoa.hdfcbank.com"','<p>rrrrr</p>')-ThreadId-8
+10-06-2017 13:50:19:572 AddIssueInDb Exception :A network-related or instance-specific error occurred while establishing a connection to SQL Server. The server was not found or was not accessible. Verify that the instance name is correct and that SQL Server is configured to allow remote connections. (provider: Named Pipes Provider, error: 40 - Could not open a connection to SQL Server)-ThreadId-19
+10-06-2017 13:50:20:688 AddIssueInDb Exception Stacktrace :   at System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   at System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   at System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   at System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   at System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   at System.Data.SqlClient.SqlConnection.Open()
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at DAL.DALCommon.GetIssueCount(String FromDate, String Todate, DataSet ds) in E:\SearchEngine\latestnew\SearchAllAll\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 84-ThreadId-19
+17-07-2017 12:26:10:317 GetIssueCount Exception :Could not find stored procedure 'Search_IssueCount'.-ThreadId-8
+17-07-2017 12:26:10:338 GetIssueCount Exception Stacktrace :   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at DAL.DALCommon.GetIssueCount(String FromDate, String Todate, DataSet ds) in D:\SearchEngine\NewLatest\SearchAllAll\SearchAllAll\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 84-ThreadId-8
+20-07-2017 12:37:26:428 GetIssueCount Exception :Procedure or function 'Search_IssueCount' expects parameter '@FromDate', which was not supplied.-ThreadId-69
+20-07-2017 12:37:26:542 GetIssueCount Exception Stacktrace :   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at System.Data.Common.DbCommand.System.Data.IDbCommand.ExecuteReader(CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.FillInternal(DataSet dataset, DataTable[] datatables, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet, Int32 startRecord, Int32 maxRecords, String srcTable, IDbCommand command, CommandBehavior behavior)
+   at System.Data.Common.DbDataAdapter.Fill(DataSet dataSet)
+   at DAL.DALCommon.GetIssueCount(String FromDate, String Todate, DataSet ds) in D:\SearchEngine\NewLatest\SearchAllAll\SearchAllAll\SearchAllAll\SearchAll\DAL\DALCommon.cs:line 84-ThreadId-69

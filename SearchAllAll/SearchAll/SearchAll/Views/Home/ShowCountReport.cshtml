@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>SearchNext</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+       <link rel="shortcut icon" type="image/x-icon" href="../Content/Imges/search1.png" />
+    <link href="/SearchAll/Bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css" />
+</head>
+<body style="background-color: #E6E6E6;" ng-app="ShowReportApp">
+    <div class="headText" style="color: Black;">
+        <h2 style="color: #555; font-family: arial,sans-serif; margin: 15px 0; text-align: center;">
+            SearchNext</h2>
+        <div style="padding-left: 90%; font-size: 20px;">
+            <a href="../Home/Index">Search Issue</a></div>
+           
+    </div>
+    <form id="myForm" data-toggle="validator" role="form" ng-controller="Showcountcontroller">
+     <div style="margin-left:20%; margin-top:5%;" class="col-md-8 form-group">
+    <div class="col-md-4 form-group">
+        <label for="FromDate" class="control-label">
+            From Date</label>
+        <input class="form-control" id="frompicker" ng-model="FromDt" type="text"  data-toggle="tooltip"
+             required>
+    </div>
+    <div class="col-md-4 form-group">
+        <label for="FromDate" class="control-label">
+            To Date</label>
+        <input class="form-control" id="topicker" ng-model="ToDt" type="text"  data-toggle="tooltip"
+            required>
+    </div>
+    <div style="padding-top:22px;" class="col-md-3 form-group">
+        <button style="width:120px;" type="submit" class="btn btn-primary">
+            <i class="fa fa-spinner fa-spin"></i>Show</button>
+    </div>
+    </div>
+      <div id="gridID" style="margin-left:15%; display:none;" class="col-md-8 form-group">
+    <table style="border:1px solid lightgray;" class=" table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th> <input style="width:200px;" placeholder="Search By Name" ng-model='SearchNameID'  class="form-control" id="nametosearchID" type="text" ng-keyup="SerachByName()"    data-toggle="tooltip" title="Search the Name" /></th>
+     <th>Count</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="IssueCnt in GetCountlist">
+      <th style="padding-top:20px;" scope="row"></th>
+      <td style="padding-top:20px;">{{IssueCnt.LoggedName}}</td>
+      <td>  <a href="#aboutModal" data-toggle="modal" data-target="#myModal" class="btn btn-circle btn-default">{{IssueCnt.IssueCount}}</a></td>
+    
+    </tr>
+
+  </tbody>
+</table>
+</div>
+    </form>
+
+      <div class = "modal fade" id = "myModal" tabindex = "-1" role = "dialog" 
+   aria-labelledby = "myModalLabel" aria-hidden = "true">
+   
+   <div class = "modal-dialog modal__bg ">
+      <div class = "modal-content">
+         
+         <div class = "modal-header">
+            <button type = "button" class = "close" data-dismiss = "modal" aria-hidden = "true">
+               ×
+            </button>
+            
+            <h4 class = "modal-title" id = "myModalLabel">
+             <b> Error </b>
+            </h4>
+         </div>
+         
+         <div class = "modal-body" id="Msgcontent">
+         </div>
+         
+         <div class = "modal-footer">
+            <button type = "button" class = "btn btn-default" data-dismiss = "modal">
+               OK
+            </button>
+          
+         </div>
+         
+      </div><!-- /.modal-content -->
+   </div><!-- /.modal-dialog -->
+   
+</div><!-- /.modal -->
+</body>
+<script src="/SearchAll/Content/Js/jquery-3.1.1.js" type="text/javascript"></script>
+<script src="/SearchAll/Content/Js/jquery-ui.js" type="text/javascript"></script>
+
+<script src="/SearchAll/Scripts/angular.js" type="text/javascript"></script>
+<script src="/SearchAll/Bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/SearchAll/Bootstrap/js/validator.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+    angular.module('ShowReportApp', [])
+    .controller('Showcountcontroller', ['$scope', '$http', function ($scope, $http) {
+
+        $(function () {
+            $("#frompicker,#topicker").datepicker({
+                changeMonth: true,
+                changeYear: true
+            });
+
+            $('#myForm').validator().on('submit', function (e) {
+                if (e.isDefaultPrevented()) {
+                    return false;
+
+                } else {
+                    if (new Date($scope.FromDt) > new Date($scope.ToDt)) {//compare end <=, not >=
+                        //your code here
+                        $('#Msgcontent').html("<p style='color:red;'><b>To Date should be greater From Date</b></p>");
+                        $('#myModal').modal('show');  
+                       
+                    }
+                    else {
+
+                        CallReport();
+                    }
+
+
+                }
+            });
+
+            $scope.SerachByName = function () {
+                debugger;
+                var reportlist = JSON.parse(sessionStorage.repdata);
+
+                var returnedReportList = $.grep(reportlist, function (element, index) {
+                    return element.LoggedName.toLowerCase().indexOf($scope.SearchNameID.toLowerCase()) >= 0;
+
+                });
+                $scope.GetCountlist = returnedReportList;
+
+            }
+
+            function CallReport() {
+                $http({
+                    method: 'POST',
+                    url: '../home/ShowReport',
+                    data: { 'FromDate': $scope.FromDt, 'ToDate': $scope.ToDt }
+                }).then(function successCallback(response) {
+                    //                            if (response.data == "success") {
+                    sessionStorage.repdata = JSON.stringify(response.data)
+
+
+                    var repdata = sessionStorage.repdata; // localStorage.getItem("ReportData");
+                    debugger;
+                    var obj = JSON.parse(repdata);
+                    $scope.GetCountlist = response.data;
+
+                    if (response.data.length > 0) {
+                        $("#gridID").fadeIn(1000);
+                    //    $('#gridID').css('display', 'block');
+                    } 
+                    else {
+                       $('#Msgcontent').html("<p style='color:red;'><b>No Record Found.</b></p>");
+                       $('#myModal').modal('show');                              
+                    }
+              
+
+                }, function errorCallback(response) {
+                    alert(" Something is wrong");
+                });
+            }
+        });
+
+    } ]);
+</script>
+</html>

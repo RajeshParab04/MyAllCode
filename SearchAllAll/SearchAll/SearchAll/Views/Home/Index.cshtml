@@ -1,0 +1,114 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchNext</title>
+     <link rel="shortcut icon" type="image/x-icon" href="../Content/Imges/search1.png" />
+    <style>
+        
+    </style>
+    <link href="/SearchAll/Content/css/Main.css" rel="stylesheet" type="text/css" />
+    <script src="../Content/Js/jquery-3.1.1.js" type="text/javascript"></script>
+    <script src="../Content/Js/angularBeta.min.js" type="text/javascript"></script>
+    <script src="../Content/Js/angular-animatebeta.min.js" type="text/javascript"></script>
+
+    <script>
+
+
+        angular.module('searchApp', ['ngAnimate'])
+        .controller('searchCntrl', function ($scope, $http, $window) {
+            $scope.SearchContent = "";
+
+
+            $scope.Resolution = function (data) {
+                var w = window.open();
+                var html = data;
+
+                $(w.document.body).html(html);
+            }
+
+            $scope.EnterSearch = function (keyEvent) {
+                if (keyEvent.which === 13)
+                    $scope.loadData();
+            }
+
+            $scope.loadData = function () {
+                debugger;
+                if ($scope.SearchContent != null && $scope.SearchContent != '') {
+                    $http({
+                        method: 'POST',
+                        url: '../Home/GetIssueList',
+                        data: { 'SearchContent': $scope.SearchContent }
+                    }).then(function successCallback(response) {
+                        $scope.IssueList = response.data;
+
+                    },
+                    function errorCallback(response) {
+                        alert("Failure");
+                    });
+
+                }
+            }
+
+
+        });
+    </script>
+</head>
+<body data-ng-app="searchApp">
+<div class="headText" style="color:Black;">
+      <h1>SearchNext</h1>
+        <div style="padding-left:90%;"><a style="color:#337ab7; font-size:20px; " href="~/Home/AddIssue">Add Issue</a></div>
+   </div>
+    <div data-ng-controller="searchCntrl" class="login--background">
+        <div class="main" style="margin-top: 150px;">
+            <h1>
+            </h1>
+          
+            <ul class="input-list style-1 clearfix">
+                <li>
+                    <input type="text" placeholder="Search The Issue...." class="search"  ng-keypress="EnterSearch($event)" ng-model='SearchContent'>
+                </li>
+            </ul>
+
+            <div class="btnDiv">
+                <button class="btn" style="margin-top:0px;"  data-ng-click="loadData()">
+                    Search</button>
+              
+            </div>
+            <div class="item" data-ng-repeat="Issue in IssueList">
+             
+                <div>
+                    <div style="clear: both;  padding-bottom: 8px; font-family: arial,sans-serif;">
+                       <a target="_blank" data-ng-click="Resolution(Issue.Resolution)" style="color:blue; font-size:18px;padding-bottom: 8px;">{{Issue.Subject}}</a>-
+                    
+                   @*    <a  target="_blank"  data-ng-href="@Url.Action("ShowResolution", "Home")?htmlraw={{Issue.Resolution}}"> Resolution</a>*@
+                     <a href="" target="_blank" data-ng-click="Resolution(Issue.Resolution)"><b>Resolution</b></a>
+                    
+                       </div>
+                    <div style="clear: both; height: 25px; font-size:14px; font-family: arial,sans-serif;">
+                        <div style="float:left;">
+                          {{Issue.ProjectName}} | {{Issue.IssueType}} |  {{Issue.Instance}} | <b>{{Issue.Loggedby}}</b></div>
+                    </div>
+                    <div  style="clear: both; height: 25px; color:#808080;font-size: small;font-family: arial,sans-serif;">
+                        <div style="float:left;">
+                           <b> {{Issue.LoggedOn}}</b> - {{Issue.Description}} </div>
+                    @*    <div style="float:left;">
+                           </div>*@
+                    </div>
+                </div>
+                @* </div>*@
+            </div>
+              <div class="item" ng-if="IssueList.length == 0">
+                     <div style="clear: both;  padding-bottom: 8px; font-family: arial,sans-serif;">
+                     Record Not Found.
+                     </div>
+              </div>
+             
+        </div>
+    </div>
+
+</body>
+</html>
