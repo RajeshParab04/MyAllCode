@@ -10,7 +10,7 @@ namespace AppSite.Controllers
     {
         //
         // GET: /App/
-
+    [ ActionName("SharingHands")]
         public ActionResult Index()
         {
             return View();

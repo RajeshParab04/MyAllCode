@@ -210,6 +210,7 @@
     <Content Include="Gallary\Parallaxbackground.png" />
     <Content Include="Gallary\Test1.jpg" />
     <Content Include="Gallary\Testimage.png" />
+    <Content Include="Gallary\Testimage320.png" />
     <Content Include="Gallary\tim-foster-192465.png" />
     <Content Include="Gallary\torajeshnew.png" />
     <Content Include="Gallary\yasin-aribuga-202658.png" />
@@ -267,7 +268,7 @@
     <None Include="assets\fonts\glyphicons-halflings-regular.ttf" />
     <None Include="assets\fonts\glyphicons-halflings-regular.woff" />
     <None Include="assets\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Views\Shared\index.cshtml" />
+    <Content Include="Views\Shared\sharinghands.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -283,12 +284,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>61798</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>
-          </IISUrl>
+          <IISUrl>http://localhost/SharingAppSite</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
