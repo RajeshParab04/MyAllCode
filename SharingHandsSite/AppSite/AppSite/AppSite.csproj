@@ -204,15 +204,40 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Gallary\backgroundparticipation.png" />
     <Content Include="Gallary\brannon-naito-270809.png" />
     <Content Include="Gallary\cesar-couto-420988.png" />
     <Content Include="Gallary\cherry-laithang-312590.png" />
+    <Content Include="Gallary\comingsoon.png" />
+    <Content Include="Gallary\Ekviraschool.png" />
+    <Content Include="Gallary\Events\crismas\Img1.png" />
+    <Content Include="Gallary\Events\crismas\Img2.png" />
+    <Content Include="Gallary\Events\crismas\Img3.png" />
+    <Content Include="Gallary\Events\crismas\Img4.png" />
+    <Content Include="Gallary\Events\crismas\Img5.png" />
+    <Content Include="Gallary\Events\crismas\Img6.png" />
+    <Content Include="Gallary\Events\crismas\Img7.png" />
+    <Content Include="Gallary\Events\Diwali\Img1.png" />
+    <Content Include="Gallary\Events\Diwali\Img2.png" />
+    <Content Include="Gallary\Events\Diwali\Img3.png" />
+    <Content Include="Gallary\Events\Diwali\Img4.png" />
+    <Content Include="Gallary\Events\Diwali\Img5.png" />
+    <Content Include="Gallary\Events\Diwali\Img6.png" />
+    <Content Include="Gallary\Events\June25617\Img1.png" />
+    <Content Include="Gallary\Events\June25617\Img2.png" />
+    <Content Include="Gallary\Events\June25617\Img3.png" />
+    <Content Include="Gallary\Events\June25617\Img4.png" />
+    <Content Include="Gallary\Events\June25617\Img5.png" />
+    <Content Include="Gallary\Events\June25617\Img6.png" />
+    <Content Include="Gallary\Events\June25617\Img7.png" />
     <Content Include="Gallary\Parallaxbackground.png" />
     <Content Include="Gallary\Test1.jpg" />
     <Content Include="Gallary\Testimage.png" />
     <Content Include="Gallary\Testimage320.png" />
+    <Content Include="Gallary\Testimage370.png" />
+    <Content Include="Gallary\Testimage400.png" />
+    <Content Include="Gallary\Testimage420.png" />
     <Content Include="Gallary\tim-foster-192465.png" />
-    <Content Include="Gallary\torajeshnew.png" />
     <Content Include="Gallary\yasin-aribuga-202658.png" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -231,7 +256,9 @@
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\_references.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
